@@ -8,7 +8,7 @@ investutil.com
 
 ### Frontend
 
-- Framework: Next.js
+- Library: React
 - Hosting: Cloudflare Pages
 - Anti-Scraping Bot: Fight Mode
   
@@ -28,14 +28,14 @@ Below is a diagram illustrating the architecture and tech stack of the InvestUti
 
 ```mermaid
 graph TD;
-    A[Frontend: Next.js] -->|Hosted on| B[Cloudflare Pages]
+    A[Frontend: React] -->|Hosted on| B[Cloudflare Pages]
     B -->|Interacts with| C[Backend: Rust Axum]
     C -->|Hosted on| D[Oracle ARM Cloud]
     C -->|Database Access| E[SQLite: Cloudflare D1]
 ```
 
 ### Development Environment Setup
-WSL2 Ubuntu, Next.js + Rust Axum + SQLite
+WSL2 Ubuntu, React + Rust Axum + SQLite
 
 ### DevOps Tools and Services
 
@@ -43,11 +43,11 @@ WSL2 Ubuntu, Next.js + Rust Axum + SQLite
 - **CI/CD Pipeline:** GitHub Actions
 - **Code Quality:** SonarCloud
 - Code Formatting:
-  -React/Next.js: Prettier
+  -React: Prettier
   -Rust: rustfmt
 - **Testing:** 
   - Unit and Integration Tests:
-    - Jest for Next.js
+    - Jest for React
     - Rust (Axum): Built-in Rust test framework and additional libraries
   - End-to-End Tests: Cypress or Playwright
   - Database Tests: sqlx with SQLite
