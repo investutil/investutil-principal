@@ -10,6 +10,7 @@ investutil.com
 
 - Framework: Next.js
 - Hosting: Cloudflare Pages
+- Anti-Scraping Bot: Fight Mode
   
 ### Backend
 - Framework: Rust Axum
