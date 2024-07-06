@@ -16,6 +16,7 @@ investutil.com
 - Hosting: Oracle ARM Cloud
 ### Database
 - Type: SQLite
+- Rust connection: sqlx crate for SQLite
 - Service: Cloudflare D1
   
 ### Production Deployment
@@ -40,9 +41,15 @@ WSL2 Ubuntu, Next.js + Rust Axum + SQLite
 - **Version Control:** GitHub (private repo)
 - **CI/CD Pipeline:** GitHub Actions
 - **Code Quality:** SonarCloud
+- Code Formatting:
+  -React/Next.js: Prettier
+  -Rust: rustfmt
 - **Testing:** 
-  - Unit and Integration Tests: Jest for Next.js
+  - Unit and Integration Tests:
+    - Jest for Next.js
+    - Rust (Axum): Built-in Rust test framework and additional libraries
   - End-to-End Tests: Cypress or Playwright
+  - Database Tests: sqlx with SQLite
 - **Deployment:**
   - **Nightly Builds:** Automated nightly builds using GitHub Actions
   - **Pre-production:** Similar setup as production, hosted on a staging server
