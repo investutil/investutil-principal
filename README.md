@@ -18,10 +18,10 @@ investutil.com
 - Type: SQLite
 - Service: Cloudflare D1
   
-### Deployment
+### Production Deployment
 The deployment process for the InvestUtil project involves using Cloudflare Pages for the frontend, Oracle ARM Cloud for the backend, and Cloudflare D1 for the database. This section will be updated with detailed deployment instructions as the project progresses.
 
-### Diagram
+#### Diagram
 Below is a diagram illustrating the architecture and tech stack of the InvestUtil project:
 
 ```mermaid
@@ -31,3 +31,19 @@ graph TD;
     C -->|Hosted on| D[Oracle ARM Cloud]
     C -->|Database Access| E[SQLite: Cloudflare D1]
 ```
+
+### Development Environment Setup
+WSL2 Ubuntu, Next.js + Rust Axum + SQLite
+
+### DevOps Tools and Services
+
+- **Version Control:** GitHub (private repo)
+- **CI/CD Pipeline:** GitHub Actions
+- **Code Quality:** SonarCloud
+- **Testing:** 
+  - Unit and Integration Tests: Jest for Next.js
+  - End-to-End Tests: Cypress or Playwright
+- **Deployment:**
+  - **Nightly Builds:** Automated nightly builds using GitHub Actions
+  - **Pre-production:** Similar setup as production, hosted on a staging server
+  - **Production:** Cloudflare Pages (for frontend), Oracle ARM Cloud (for backend), Cloudflare D1 (for database)
