@@ -19,6 +19,12 @@ investutil.com
 - Type: SQLite
 - Rust connection: sqlx crate for SQLite
 - Service: Cloudflare D1
+
+### Documentation
+- mdBook
+
+### Blog
+- 
   
 ### Production Deployment
 The deployment process for the InvestUtil project involves using Cloudflare Pages for the frontend, Oracle ARM Cloud for the backend, and Cloudflare D1 for the database. This section will be updated with detailed deployment instructions as the project progresses.
