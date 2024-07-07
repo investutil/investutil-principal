@@ -26,6 +26,12 @@ blog.investutil.com
 - Rust connection: sqlx crate for SQLite
 - Service: Cloudflare D1
 
+### CICD
+GitHub Actions 
+
+### Docker registry
+GitHub Container Registry
+
 ### Documentation
 - mdBook
 
