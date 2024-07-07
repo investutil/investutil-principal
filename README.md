@@ -2,7 +2,13 @@
 Welcome to the InvestUtil project repository. This repository contains information about my site, which I plan to partially open-source. The project aims to provide a comprehensive investment utility platform. For the initial setup and development, I plan to use this guide.
 
 ## Domain Name
-investutil.com
+### Site
+www.investutil.com
+### Documentations
+doc.investutil.com
+### Blog
+blog.investutil.com
+
 
 ## Tech Stack
 
