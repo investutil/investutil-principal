@@ -36,8 +36,7 @@ GitHub Container Registry
 - mdBook
 
 ### Blog
-- 
-  
+- getzola
 ### Production Deployment
 The deployment process for the InvestUtil project involves using Cloudflare Pages for the frontend, Oracle ARM Cloud for the backend, and Cloudflare D1 for the database. This section will be updated with detailed deployment instructions as the project progresses.
 
