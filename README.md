@@ -5,7 +5,9 @@ Welcome to the InvestUtil project repository. This repository contains informati
 
 ### public repo
 #### Front-end
+https://github.com/investutil/investutil-front-public
 #### Back-end
+https://github.com/investutil/investutil-back-public
 
 ## Domain Name
 ### Site
