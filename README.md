@@ -17,7 +17,7 @@ doc.investutil.com
 ### Blog
 blog.investutil.com
 ### Tech Wiki
-https://github.com/xudongzhaodev/investutil/wiki
+https://github.com/investutil/investutil-principal/wiki
 
 
 ## Tech Stack
