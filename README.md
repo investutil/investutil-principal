@@ -30,9 +30,8 @@ https://github.com/xudongzhaodev/investutil/wiki
 - Framework: Rust Axum
 - Hosting: Oracle ARM Cloud
 ### Database
-- Type: MariaDB
-- Rust connection: sqlx crate for MariaDB
-- Service: Cloudflare D1
+- Type: PostgreSQL
+- Rust connection: sqlx crate for PostgreSQL
 
 ### CICD
 GitHub Actions 
@@ -56,11 +55,11 @@ graph TD;
     A[Frontend: React] -->|Hosted on| B[Cloudflare Pages]
     B -->|Interacts with| C[Backend: Rust Axum]
     C -->|Hosted on| D[Oracle ARM Cloud]
-    C -->|Database Access| E[MariaDB]
+    C -->|Database Access| E[PostgreSQL]
 ```
 
 ### Development Environment Setup
-WSL2 Ubuntu, React + Rust Axum + MariaDB
+WSL2 Ubuntu, React + Rust Axum + PostgreSQL
 
 ### DevOps Tools and Services
 
@@ -75,7 +74,7 @@ WSL2 Ubuntu, React + Rust Axum + MariaDB
     - Jest for React
     - Rust (Axum): Built-in Rust test framework and additional libraries
   - End-to-End Tests: Cypress or Playwright
-  - Database Tests: sqlx with MariaDB
+  - Database Tests: sqlx with PostgreSQL
 - **Deployment:**
   - **Nightly Builds:** Automated nightly builds using GitHub Actions
   - **Pre-production:** Similar setup as production, hosted on a staging server
