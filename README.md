@@ -34,6 +34,7 @@ https://github.com/investutil/investutil-principal/wiki
 ### Database
 - Type: PostgreSQL
 - Rust connection: sqlx crate for PostgreSQL
+- Liquibase: Database Change Management & CI/CD 
 
 ### CICD
 GitHub Actions 
