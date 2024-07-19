@@ -82,4 +82,4 @@ WSL2 Ubuntu, React + Rust Axum + mongodb atlas free plan
 - **Deployment:**
   - **Nightly Builds:** Automated nightly builds using GitHub Actions
   - **Pre-production:** Similar setup as production, hosted on a staging server
-  - **Production:** Cloudflare Pages (for frontend), Oracle ARM Cloud (for backend), Cloudflare D1 (for database)
+  - **Production:** Cloudflare Pages (for frontend), Oracle ARM Cloud (for backend), Oracle with MongoDB API (for database)
