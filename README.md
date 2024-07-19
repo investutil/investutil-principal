@@ -34,9 +34,8 @@ https://github.com/investutil/investutil-principal/wiki
 - Framework: Rust Axum
 - Hosting: Oracle ARM Cloud
 ### Database
-- Type: PostgreSQL
-- Rust connection: sqlx crate for PostgreSQL
-- Liquibase: Database Change Management & CI/CD 
+- Type: MongoDB
+- Rust connection: MongoDB Rust Driver
 
 ### CICD
 GitHub Actions 
@@ -60,11 +59,11 @@ graph TD;
     A[Frontend: React] -->|Hosted on| B[Cloudflare Pages]
     B -->|Interacts with| C[Backend: Rust Axum]
     C -->|Hosted on| D[Oracle ARM Cloud]
-    C -->|Database Access| E[PostgreSQL]
+    C -->|Database Access| E[Oracle with MongoDB API]
 ```
 
 ### Development Environment Setup
-WSL2 Ubuntu, React + Rust Axum + PostgreSQL
+WSL2 Ubuntu, React + Rust Axum + mongodb atlas free plan
 
 ### DevOps Tools and Services
 
@@ -79,7 +78,7 @@ WSL2 Ubuntu, React + Rust Axum + PostgreSQL
     - Jest for React
     - Rust (Axum): Built-in Rust test framework and additional libraries
   - End-to-End Tests: Cypress or Playwright
-  - Database Tests: sqlx with PostgreSQL
+  - Database Tests: MongoDB Rust Driver
 - **Deployment:**
   - **Nightly Builds:** Automated nightly builds using GitHub Actions
   - **Pre-production:** Similar setup as production, hosted on a staging server
