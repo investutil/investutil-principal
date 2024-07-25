@@ -1,6 +1,6 @@
 This is not a dev repo, it is a summary repo.
 
-See the code in [Front-end](https://github.com/investutil/investutil-front-public), [Back-end](https://github.com/investutil/investutil-back-public), [Web Scrapping](https://github.com/investutil/web-scraping) repos
+See the code in [Front-end](https://github.com/investutil/investutil-front-public), [Back-end](https://github.com/investutil/investutil-back-public), [gocrawler](https://github.com/investutil/gocrawler) repos
 ## Introduction
 Welcome to the InvestUtil project repository. This repository contains information about my site, which I plan to partially open-source. The project aims to provide a comprehensive investment utility platform. For the initial setup and development, I plan to use this guide.
 
@@ -12,7 +12,7 @@ https://github.com/investutil/investutil-front-public
 #### Back-end
 https://github.com/investutil/investutil-back-public
 #### Web Scrapping
-https://github.com/investutil/web-scraping
+https://github.com/investutil/gocrawler
 
 ## Domain Name
 ### Site
