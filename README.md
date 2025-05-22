@@ -35,8 +35,8 @@ https://github.com/investutil/investutil-principal/wiki
 - Framework: Rust Axum
 - Hosting: Oracle ARM Cloud
 ### Database
-- Type: MongoDB
-- Rust connection: MongoDB Rust Driver
+- Type: PostgreSQL with Supabase
+- Rust connection: sqlx
 
 ### CICD
 GitHub Actions 
@@ -48,7 +48,8 @@ GitHub Container Registry
 - mdBook
 
 ### Blog
-- getzola
+- hugo
+
 ### Production Deployment
 The deployment process for the InvestUtil project involves using Cloudflare Pages for the frontend, Oracle ARM Cloud for the backend, and Cloudflare D1 for the database. This section will be updated with detailed deployment instructions as the project progresses.
 
@@ -60,11 +61,11 @@ graph TD;
     A[Frontend: React] -->|Hosted on| B[Cloudflare Pages]
     B -->|Interacts with| C[Backend: Rust Axum]
     C -->|Hosted on| D[Oracle ARM Cloud]
-    C -->|Database Access| E[Oracle with MongoDB API]
+    C -->|Database Access| E[sqlx]
 ```
 
 ### Development Environment Setup
-WSL2 Ubuntu, React + Rust Axum + mongodb atlas free plan
+WSL2 Ubuntu, React + Rust Axum + Local PostgreSQL 
 
 ### DevOps Tools and Services
 
@@ -79,8 +80,8 @@ WSL2 Ubuntu, React + Rust Axum + mongodb atlas free plan
     - Jest for React
     - Rust (Axum): Built-in Rust test framework and additional libraries
   - End-to-End Tests: Cypress or Playwright
-  - Database Tests: MongoDB Rust Driver
+  - Database Tests: sqlx
 - **Deployment:**
   - **Nightly Builds:** Automated nightly builds using GitHub Actions
   - **Pre-production:** Similar setup as production, hosted on a staging server
-  - **Production:** Cloudflare Pages (for frontend), Oracle ARM Cloud (for backend), Oracle with MongoDB API (for database)
+  - **Production:** Cloudflare Pages (for frontend), Oracle ARM Cloud (for backend), PostgreSQL with Supabase (for database)
