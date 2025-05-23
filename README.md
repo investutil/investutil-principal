@@ -1,5 +1,6 @@
-This is not a dev Repo
-See the code in [Front-end](https://github.com/investutil/investutil-front-public) and [Back-end](https://github.com/investutil/investutil-back-public) repos
+This is not a dev repo, it is a summary repo.
+
+See the code in [Front-end](https://github.com/investutil/investutil-front-public), [Back-end](https://github.com/investutil/investutil-back-public) repos
 ## Introduction
 Welcome to the InvestUtil project repository. This repository contains information about my site, which I plan to partially open-source. The project aims to provide a comprehensive investment utility platform. For the initial setup and development, I plan to use this guide.
 
@@ -34,9 +35,8 @@ https://github.com/investutil/investutil-principal/wiki
 - Framework: Rust Axum
 - Hosting: Oracle ARM Cloud
 ### Database
-- Type: PostgreSQL
-- Rust connection: sqlx crate for PostgreSQL
-- Liquibase: Database Change Management & CI/CD 
+- Type: PostgreSQL with Supabase
+- Rust connection: sqlx
 
 ### CICD
 GitHub Actions 
@@ -48,7 +48,8 @@ GitHub Container Registry
 - mdBook
 
 ### Blog
-- getzola
+- hugo
+
 ### Production Deployment
 The deployment process for the InvestUtil project involves using Cloudflare Pages for the frontend, Oracle ARM Cloud for the backend, and Cloudflare D1 for the database. This section will be updated with detailed deployment instructions as the project progresses.
 
@@ -60,11 +61,11 @@ graph TD;
     A[Frontend: React] -->|Hosted on| B[Cloudflare Pages]
     B -->|Interacts with| C[Backend: Rust Axum]
     C -->|Hosted on| D[Oracle ARM Cloud]
-    C -->|Database Access| E[PostgreSQL]
+    C -->|Database Access| E[sqlx]
 ```
 
 ### Development Environment Setup
-WSL2 Ubuntu, React + Rust Axum + PostgreSQL
+WSL2 Ubuntu, React + Rust Axum + Local PostgreSQL 
 
 ### DevOps Tools and Services
 
@@ -79,8 +80,8 @@ WSL2 Ubuntu, React + Rust Axum + PostgreSQL
     - Jest for React
     - Rust (Axum): Built-in Rust test framework and additional libraries
   - End-to-End Tests: Cypress or Playwright
-  - Database Tests: sqlx with PostgreSQL
+  - Database Tests: sqlx
 - **Deployment:**
   - **Nightly Builds:** Automated nightly builds using GitHub Actions
   - **Pre-production:** Similar setup as production, hosted on a staging server
-  - **Production:** Cloudflare Pages (for frontend), Oracle ARM Cloud (for backend), Cloudflare D1 (for database)
+  - **Production:** Cloudflare Pages (for frontend), Oracle ARM Cloud (for backend), PostgreSQL with Supabase (for database)
