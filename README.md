@@ -1,4 +1,5 @@
 This is not a dev repo, it is a summary repo.
+But it is recommended to put clone investutil-front and investutil-back projects into this project.
 
 See the code in [Front-end](https://github.com/investutil/investutil-front-public), [Back-end](https://github.com/investutil/investutil-back-public) repos
 ## Introduction
