@@ -6,6 +6,19 @@ See the code in [Front-end](https://github.com/investutil/investutil-front-publi
 ## Introduction
 Welcome to the InvestUtil project repository. This repository contains information about my site, which I plan to partially open-source. The project aims to provide a comprehensive investment utility platform. For the initial setup and development, I plan to use this guide.
 
+## Project Structure
+
+```
+investutil-principal/
+├── investutil-front/     # Frontend application (React)
+├── investutil-back/      # Backend application (Rust)
+└── investutil-infra/     # Infrastructure and deployment configurations
+    ├── docker/          # Docker configurations
+    │   └── backend/     # Backend Docker files
+    └── k8s/            # Kubernetes configurations
+        └── backend/    # Backend K8s manifests
+```
+
 ## Children Repositories
 
 ### Public Repositories
@@ -13,6 +26,8 @@ Welcome to the InvestUtil project repository. This repository contains informati
 https://github.com/investutil/investutil-front-public
 #### Back-end
 https://github.com/investutil/investutil-back-public
+#### Infrastructure
+https://github.com/investutil/investutil-infra
 
 ## Domain Name
 ### Site
@@ -39,11 +54,11 @@ https://github.com/investutil/investutil-principal/wiki
 - Type: PostgreSQL with Supabase
 - Rust connection: sqlx
 
-### CI/CD
-GitHub Actions 
-
-### Docker Registry
-GitHub Container Registry
+### Infrastructure
+- **Containerization**: Docker
+- **Orchestration**: Kubernetes
+- **Registry**: GitHub Container Registry
+- **CI/CD**: GitHub Actions
 
 ### Documentation
 - mdBook
@@ -52,7 +67,32 @@ GitHub Container Registry
 - Hugo
 
 ### Production Deployment
-The deployment process for the InvestUtil project involves using Cloudflare Pages for the frontend, Oracle ARM Cloud for the backend, and PostgreSQL with Supabase for the database. This section will be updated with detailed deployment instructions as the project progresses.
+
+The deployment process for the InvestUtil project involves multiple components:
+
+#### Frontend Deployment
+- Hosted on Cloudflare Pages
+- Automated deployment through GitHub Actions
+
+#### Backend Deployment
+Two deployment options are available:
+
+1. **Docker Compose (Development)**
+   - Simple deployment using Docker Compose
+   - Includes PostgreSQL database
+   - See `investutil-infra/docker/backend/` for configuration
+
+2. **Kubernetes (Production)**
+   - Full Kubernetes deployment
+   - Includes:
+     - Backend service deployment
+     - PostgreSQL StatefulSet
+     - ConfigMaps and Secrets management
+   - See `investutil-infra/k8s/backend/` for configuration
+
+#### Database
+- PostgreSQL with Supabase for production
+- Local PostgreSQL for development
 
 #### Architecture Diagram
 Below is a diagram illustrating the architecture and tech stack of the InvestUtil project:
@@ -63,6 +103,8 @@ graph TD;
     B -->|Interacts with| C[Backend: Rust Axum]
     C -->|Hosted on| D[Oracle ARM Cloud]
     C -->|Database Access| E[sqlx]
+    C -->|Containerized with| F[Docker]
+    F -->|Orchestrated by| G[Kubernetes]
 ```
 
 ### Development Environment Setup
@@ -152,9 +194,21 @@ cd investutil-front
 npm run dev
 ```
 
+## Deployment
+
+For detailed deployment instructions, please refer to:
+- Frontend deployment: See frontend repository README
+- Backend deployment: See backend repository README
+- Infrastructure setup: See [investutil-infra](https://github.com/investutil/investutil-infra) repository
+
 ## Security Considerations
 
 - Environment files (.env) contain sensitive information and should never be committed to Git
 - Use .env.example as a template, but never include actual sensitive data
 - Implement more secure configurations in production
 - Regularly update dependencies to patch security vulnerabilities
+- For production deployments:
+  - Use secure secrets management in Kubernetes
+  - Enable HTTPS/TLS for all services
+  - Implement proper network policies
+  - Follow the principle of least privilege
