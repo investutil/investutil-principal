@@ -1,7 +1,13 @@
 This is not a dev repo, it is a summary repo.
 But it is recommended to put clone investutil-front and investutil-back projects into this project.
 
-See the code in [Front-end](https://github.com/investutil/investutil-front-public), [Back-end](https://github.com/investutil/investutil-back-public) [Infrastructure]([https://github.com/investutil/investutil-back-public](https://github.com/investutil/investutil-infra) repos
+See the code in these repos:
+
+[Front-end](https://github.com/investutil/investutil-front-public)
+
+[Back-end](https://github.com/investutil/investutil-back-public)
+
+[Infrastructure](https://github.com/investutil/investutil-infra) 
 
 ## Introduction
 Welcome to the InvestUtil project repository. This repository contains information about my site, which I plan to partially open-source. The project aims to provide a comprehensive investment utility platform. For the initial setup and development, I plan to use this guide.
