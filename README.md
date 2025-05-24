@@ -2,12 +2,13 @@ This is not a dev repo, it is a summary repo.
 But it is recommended to put clone investutil-front and investutil-back projects into this project.
 
 See the code in [Front-end](https://github.com/investutil/investutil-front-public), [Back-end](https://github.com/investutil/investutil-back-public) repos
+
 ## Introduction
 Welcome to the InvestUtil project repository. This repository contains information about my site, which I plan to partially open-source. The project aims to provide a comprehensive investment utility platform. For the initial setup and development, I plan to use this guide.
 
-## children repo
+## Children Repositories
 
-### public repo
+### Public Repositories
 #### Front-end
 https://github.com/investutil/investutil-front-public
 #### Back-end
@@ -16,18 +17,16 @@ https://github.com/investutil/investutil-back-public
 ## Domain Name
 ### Site
 www.investutil.com
-### Documentations
+### Documentation
 doc.investutil.com
 ### Blog
 blog.investutil.com
 ### Tech Wiki
 https://github.com/investutil/investutil-principal/wiki
 
-
 ## Tech Stack
 
 ### Frontend
-
 - Library: React
 - Hosting: Cloudflare Pages
 - Anti-Scraping Bot: Fight Mode
@@ -35,26 +34,27 @@ https://github.com/investutil/investutil-principal/wiki
 ### Backend
 - Framework: Rust Axum
 - Hosting: Oracle ARM Cloud
+
 ### Database
 - Type: PostgreSQL with Supabase
 - Rust connection: sqlx
 
-### CICD
+### CI/CD
 GitHub Actions 
 
-### Docker registry
+### Docker Registry
 GitHub Container Registry
 
 ### Documentation
 - mdBook
 
 ### Blog
-- hugo
+- Hugo
 
 ### Production Deployment
-The deployment process for the InvestUtil project involves using Cloudflare Pages for the frontend, Oracle ARM Cloud for the backend, and Cloudflare D1 for the database. This section will be updated with detailed deployment instructions as the project progresses.
+The deployment process for the InvestUtil project involves using Cloudflare Pages for the frontend, Oracle ARM Cloud for the backend, and PostgreSQL with Supabase for the database. This section will be updated with detailed deployment instructions as the project progresses.
 
-#### Diagram
+#### Architecture Diagram
 Below is a diagram illustrating the architecture and tech stack of the InvestUtil project:
 
 ```mermaid
@@ -69,13 +69,12 @@ graph TD;
 WSL2 Ubuntu, React + Rust Axum + Local PostgreSQL 
 
 ### DevOps Tools and Services
-
 - **Version Control:** GitHub (private repo)
 - **CI/CD Pipeline:** GitHub Actions
 - **Code Quality:** SonarCloud
-- Code Formatting:
-  -React: Prettier
-  -Rust: rustfmt
+- **Code Formatting:**
+  - React: Prettier
+  - Rust: rustfmt
 - **Testing:** 
   - Unit and Integration Tests:
     - Jest for React
@@ -85,4 +84,77 @@ WSL2 Ubuntu, React + Rust Axum + Local PostgreSQL
 - **Deployment:**
   - **Nightly Builds:** Automated nightly builds using GitHub Actions
   - **Pre-production:** Similar setup as production, hosted on a staging server
-  - **Production:** Cloudflare Pages (for frontend), Oracle ARM Cloud (for backend), PostgreSQL with Supabase (for database)
+  - **Production:** Cloudflare Pages (frontend), Oracle ARM Cloud (backend), PostgreSQL with Supabase (database)
+
+## Local Development Setup
+
+### Backend Setup
+
+1. Navigate to the backend directory:
+```bash
+cd investutil-back
+```
+
+2. Copy the environment variables template:
+```bash
+cp .env.example .env
+```
+
+3. Configure your `.env` file:
+```env
+# Server Configuration
+HOST=0.0.0.0
+PORT=8080
+
+# Database Configuration
+DATABASE_URL=postgresql://username:password@localhost:5432/database_name
+
+# JWT Configuration
+JWT_SECRET=your_secure_jwt_secret
+
+# Other Configuration
+RUST_LOG=debug
+```
+
+**Important Security Notes:**
+- Never commit the `.env` file to version control
+- Use strong passwords and secure JWT secrets
+- Implement stricter security settings in production
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+```bash
+cd investutil-front
+```
+
+2. Copy the environment variables template:
+```bash
+cp .env.example .env
+```
+
+3. Configure your `.env` file:
+```env
+VITE_API_URL=http://localhost:8080
+```
+
+## Development
+
+1. Start the backend server:
+```bash
+cd investutil-back
+cargo run
+```
+
+2. Start the frontend development server:
+```bash
+cd investutil-front
+npm run dev
+```
+
+## Security Considerations
+
+- Environment files (.env) contain sensitive information and should never be committed to Git
+- Use .env.example as a template, but never include actual sensitive data
+- Implement more secure configurations in production
+- Regularly update dependencies to patch security vulnerabilities
